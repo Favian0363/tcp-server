@@ -5,8 +5,11 @@ How to use (terminal):
 - "nc localhost 9090" -> connect to socket 
 
 #### Blocking, Single Client
-- only handling one client's file descriptor
+- create socket -> bind socket
+- set socket to listen 
+- accept connection -> handle client (confirm connection and receive bytes)
 
 #### Non-Blocking, Multi Client
-- using std::thread for independent client handling
+- thread pool (8) for independent client handling
+    - using mutex, unique locks, condition variables 
 
